@@ -1,0 +1,20 @@
+.filim-style{
+    margin:  0 auto;
+    margin-top: 50px;
+    flex-shrink: 0;
+    z-index: 10;
+}
+.filim-style__item{
+    margin: 0 auto;
+}
+.filim-style__wrap{
+    position: absolute;
+    z-index: 1;
+    flex-direction: column;
+} 
+.filim-style__wrap li{
+    
+    &:last-child{
+        display: none;
+    }
+}
