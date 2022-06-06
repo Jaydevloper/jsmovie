@@ -7,15 +7,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Movies</title>
   <link rel="stylesheet" href="css/main.css">
+  <link rel="icon"  href="img/movies.ico">
 </head>
 
 <body>
 
   <header class="site-header">
     <div class="site-header__container container">
+    <div class="site-header__container-content">
       <a class="site-logo" href="index.html">
         <h1 class="site-logo__text">Movies</h1>
       </a>
+      <form class="site-header__form" action="#" method="post" id="forms">
+        <input class="site-header__input" type="search" name="search" placeholder="search" id="search">
+        <p class="site-header__page">not result</p>
+      </form>
+    </div>
       <form class="site-header__form filter-form" id="filter-form" action="#" method="get">
         <select class="filter-form__select" id="gender-filter" name="gender">
           <option value="" disabled selected>filter by gender</option>

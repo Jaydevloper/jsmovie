@@ -18,3 +18,41 @@
         display: none;
     }
 }
+.filim-style__link{
+    padding: 12px;
+    position: fixed;
+    z-index: 10;
+    right: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.5;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    color: #fff;
+    background-color: #000;
+    border-radius: 8px;
+    &:active{
+        transform: scale(1.2);
+        animation: link 1s ease 0s ;
+    }
+    &::before{
+        display: inline-block;
+        vertical-align: middle;
+        width: 14px;
+        height: 40px;
+        transform: rotate(180deg);
+        background-image: url('../../img/arrow.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        content: '';
+    }
+}
+@keyframes link{
+   
+    to{
+        opacity: 0.2;
+        right: 300px;
+    }
+}

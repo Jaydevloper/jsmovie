@@ -1,7 +1,24 @@
 .site-logo {
+  position: relative;
+  z-index: 1;
   text-decoration: none;
   color: #fff;
+  &::after{
+    position: absolute;
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    top: 10px;
+    left: 142px;
+    background-image: url('../../img/search3.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: '';
+    
+  }
 }
+
 
 .site-logo__text {
   margin: 0;
