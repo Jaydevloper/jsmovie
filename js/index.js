@@ -133,34 +133,34 @@ function renderBtn(){
             e.preventDefault();
             elList.innerHTML = ''
             const arrayEvent = films
+            const re = new RegExp(elSearch.value,'gi');
             arrayEvent.filter(elementEvent => {
-               
-                if (!elementEvent.title.trim().includes(elSearch.value) ){
-                    elForms.classList.toggle('site-header__form--failid')   
-                }
-                if (elementEvent.title.toUpperCase().includes(elSearch.value)){
-                     render(elementEvent);
-                }
-               else if (elementEvent.title.toLowerCase().includes(elSearch.value)){
+             return  elementEvent.title.match(re) && render(elementEvent)
+             // upprcase bilan qilish
+            //     if (!elementEvent.title.trim().includes(elSearch.value) ){
+            //         elForms.classList.toggle('site-header__form--failid')   
+            //     }
+            //     if (elementEvent.title.toUpperCase().includes(elSearch.value)){
+            //          render(elementEvent);
+            //     }
+            //    else if (elementEvent.title.toLowerCase().includes(elSearch.value)){
                    
-                     render(elementEvent);
-                } 
-                else if (elementEvent.title.includes(elSearch.value)){
-                    return render(elementEvent)
-                }
-                })
-
+            //          render(elementEvent);
+            //     } 
+            //     else if (elementEvent.title.includes(elSearch.value)){
+            //         return render(elementEvent)
+            //     }
+            
+        })
+        
             })
         function timedRefresh(timeoutPeriod) {
             setTimeout("location.reload(true);",timeoutPeriod);
         }
- 
-    let a = 'bir';
     
-    console.log(a.toUpperCase());
 
 $rendeer();
-// // new speech recognition object
+// new speech recognition object
 // var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
 // var recognition = new SpeechRecognition();
             
@@ -180,6 +180,6 @@ $rendeer();
 //     var confidence = event.results[0][0].confidence;
 // };
               
-// // start recognition
+// start recognition
 // recognition.start();
                 
