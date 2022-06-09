@@ -135,27 +135,51 @@ function renderBtn(){
             const arrayEvent = films
             arrayEvent.filter(elementEvent => {
                
-                if (elementEvent.overview.includes(elSearch.value)){
-                    render(elementEvent)
+                if (!elementEvent.title.trim().includes(elSearch.value) ){
+                    elForms.classList.toggle('site-header__form--failid')   
                 }
-                if (!elementEvent.overview.includes(elSearch.value) ||!elementEvent.title.includes(elSearch.value) ){
-                    elForms.classList.toggle('site-header__form--failid')
+                if (elementEvent.title.toUpperCase().includes(elSearch.value)){
+                     render(elementEvent);
                 }
-            
-             if (elementEvent.title){
-                return  elementEvent.title.includes(elSearch.value) && render(elementEvent);
-            }
-               
-                
-            })
+               else if (elementEvent.title.toLowerCase().includes(elSearch.value)){
+                   
+                     render(elementEvent);
+                } 
+                else if (elementEvent.title.includes(elSearch.value)){
+                    return render(elementEvent)
+                }
+                })
 
             })
-
         function timedRefresh(timeoutPeriod) {
             setTimeout("location.reload(true);",timeoutPeriod);
         }
+ 
+    let a = 'bir';
+    
+    console.log(a.toUpperCase());
 
 $rendeer();
-    
-    
+// // new speech recognition object
+// var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
+// var recognition = new SpeechRecognition();
+            
+// // This runs when the speech recognition service starts
+// recognition.onstart = function() {
+//     console.log("We are listening. Try speaking into the microphone.");
+// };
+
+// recognition.onspeechend = function() {
+//     // when user is done speaking
+//     recognition.stop();
+// }
+              
+// // This runs when the speech recognition service returns result
+// recognition.onresult = function(event) {
+//     var transcript = event.results[0][0].transcript;
+//     var confidence = event.results[0][0].confidence;
+// };
+              
+// // start recognition
+// recognition.start();
                 

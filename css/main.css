@@ -495,6 +495,12 @@ img {
   color: #660000;
 }
 
+.site-header__form--none
+.site-header__form--failid
+.site-header__page {
+  display: none;
+}
+
 @media only screen and (max-width: 445px) {
   .site-header__container {
     -webkit-box-orient: vertical;
